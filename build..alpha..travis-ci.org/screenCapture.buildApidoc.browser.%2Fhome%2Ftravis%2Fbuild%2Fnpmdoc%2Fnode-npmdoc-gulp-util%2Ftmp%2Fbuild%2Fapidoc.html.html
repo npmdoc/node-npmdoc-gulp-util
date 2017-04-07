@@ -1,0 +1,1431 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/gulpjs/gulp-util#readme">gulp-util (v3.0.8)</a>
+</h1>
+<h4>Utility functions for gulp plugins</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-util">module gulp-util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.File">
+            function <span class="apidocSignatureSpan">gulp-util.</span>File
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.PluginError">
+            function <span class="apidocSignatureSpan">gulp-util.</span>PluginError
+            <span class="apidocSignatureSpan">(plugin, message, opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.beep">
+            function <span class="apidocSignatureSpan">gulp-util.</span>beep
+            <span class="apidocSignatureSpan">(val, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.buffer">
+            function <span class="apidocSignatureSpan">gulp-util.</span>buffer
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.combine">
+            function <span class="apidocSignatureSpan">gulp-util.</span>combine
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.date">
+            function <span class="apidocSignatureSpan">gulp-util.</span>date
+            <span class="apidocSignatureSpan">(date, mask, utc, gmt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.isBuffer">
+            function <span class="apidocSignatureSpan">gulp-util.</span>isBuffer
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.isNull">
+            function <span class="apidocSignatureSpan">gulp-util.</span>isNull
+            <span class="apidocSignatureSpan">(v)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.isStream">
+            function <span class="apidocSignatureSpan">gulp-util.</span>isStream
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.log">
+            function <span class="apidocSignatureSpan">gulp-util.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.noop">
+            function <span class="apidocSignatureSpan">gulp-util.</span>noop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.replaceExtension">
+            function <span class="apidocSignatureSpan">gulp-util.</span>replaceExtension
+            <span class="apidocSignatureSpan">(npath, ext)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.template">
+            function <span class="apidocSignatureSpan">gulp-util.</span>template
+            <span class="apidocSignatureSpan">(tmpl, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-util.</span>File.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-util.</span>PluginError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-util.</span>colors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-util.</span>env</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gulp-util.</span>linefeed</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-util.File">module gulp-util.File</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.File.File">
+            function <span class="apidocSignatureSpan">gulp-util.</span>File
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.File.isVinyl">
+            function <span class="apidocSignatureSpan">gulp-util.File.</span>isVinyl
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-util.File.prototype">module gulp-util.File.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.File.prototype.clone">
+            function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>clone
+            <span class="apidocSignatureSpan">(opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.File.prototype.inspect">
+            function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>inspect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.File.prototype.isBuffer">
+            function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>isBuffer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.File.prototype.isDirectory">
+            function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>isDirectory
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.File.prototype.isNull">
+            function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>isNull
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.File.prototype.isStream">
+            function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>isStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.File.prototype.pipe">
+            function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>pipe
+            <span class="apidocSignatureSpan">(stream, opt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-util.PluginError">module gulp-util.PluginError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.PluginError.PluginError">
+            function <span class="apidocSignatureSpan">gulp-util.</span>PluginError
+            <span class="apidocSignatureSpan">(plugin, message, opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.PluginError.super_">
+            function <span class="apidocSignatureSpan">gulp-util.PluginError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-util.PluginError.prototype">module gulp-util.PluginError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.PluginError.prototype._messageDetails">
+            function <span class="apidocSignatureSpan">gulp-util.PluginError.prototype.</span>_messageDetails
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.PluginError.prototype._messageWithDetails">
+            function <span class="apidocSignatureSpan">gulp-util.PluginError.prototype.</span>_messageWithDetails
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.PluginError.prototype.toString">
+            function <span class="apidocSignatureSpan">gulp-util.PluginError.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-util.colors">module gulp-util.colors</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">gulp-util.colors.</span>enabled</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">gulp-util.colors.</span>supportsColor</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.colors.hasColor">
+            function <span class="apidocSignatureSpan">gulp-util.colors.</span>hasColor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-util.colors.stripColor">
+            function <span class="apidocSignatureSpan">gulp-util.colors.</span>stripColor
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-util.colors.</span>styles</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-util" id="apidoc.module.gulp-util">module gulp-util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.File" id="apidoc.element.gulp-util.File">
+        function <span class="apidocSignatureSpan">gulp-util.</span>File
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function File(file) {
+  if (!file) file = {};
+
+  // record path change
+  var history = file.path ? [file.path] : file.history;
+  this.history = history || [];
+
+  this.cwd = file.cwd || process.cwd();
+  this.base = file.base || this.cwd;
+
+  // stat = files stats object
+  this.stat = file.stat || null;
+
+  // contents = stream, buffer, or null if not read
+  this.contents = file.contents || null;
+
+  this._isVinyl = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+This is a lodash.template function wrapper. You must pass in a valid gulp file object so it is available to the user or it will
+error. You can not configure any of the delimiters. Look at the [lodash docs](http://lodash.com/docs#template) for more info.
+
+## new File(obj)
+
+This is just [vinyl](https://github.com/wearefractal/vinyl)
+
+```javascript
+var file = new gutil.<span class="apidocCodeKeywordSpan">File</span>({
+  base: path.join(__dirname, './fixtures/'),
+  cwd: __dirname,
+  path: path.join(__dirname, './fixtures/test.coffee')
+});
+```
+
+## noop()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.PluginError" id="apidoc.element.gulp-util.PluginError">
+        function <span class="apidocSignatureSpan">gulp-util.</span>PluginError
+        <span class="apidocSignatureSpan">(plugin, message, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PluginError(plugin, message, opt) {
+  if (!(this instanceof PluginError)) throw new Error('Call PluginError using new');
+
+  Error.call(this);
+
+  var options = parseOptions(plugin, message, opt);
+  var self = this;
+
+  // if options has an error, grab details from it
+  if (options.error) {
+    // These properties are not enumerable, so we have to add them explicitly.
+    arrayUniq(Object.keys(options.error).concat(nonEnumberableProperties))
+      .forEach(function(prop) {
+        self[prop] = options.error[prop];
+      });
+  }
+
+  var properties = ['name', 'message', 'fileName', 'lineNumber', 'stack', 'showStack', 'showProperties', 'plugin'];
+
+  // options object can override
+  properties.forEach(function(prop) {
+    if (prop in options) this[prop] = options[prop];
+  }, this);
+
+  // defaults
+  if (!this.name) this.name = 'Error';
+
+  if (!this.stack) {
+    // Error.captureStackTrace appends a stack property which relies on the toString method of the object it is applied to.
+    // Since we are using our own toString method which controls when to display the stack trace if we don't go through this
+    // safety object, then we'll get stack overflow problems.
+    var safety = {
+      toString: function() {
+        return this._messageWithDetails() + '\nStack:';
+      }.bind(this)
+    };
+    Error.captureStackTrace(safety, arguments.callee || this.constructor);
+    this.__safety = safety;
+  }
+
+  if (!this.plugin) throw new Error('Missing plugin name');
+  if (!this.message) throw new Error('Missing error message');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- If you pass an error in as the message the stack will be pulled from that, otherwise one will be created.
+- Note that if you pass in a custom stack string you need to include the message along with that.
+- Error properties will be included in `err.toString()`. Can be omitted by including `{showProperties: false}` in the options.
+
+These are all acceptable forms of instantiation:
+
+```javascript
+var err = new gutil.<span class="apidocCodeKeywordSpan">PluginError</span>('test', {
+  message: 'something broke'
+});
+
+var err = new gutil.PluginError({
+  plugin: 'test',
+  message: 'something broke'
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.beep" id="apidoc.element.gulp-util.beep">
+        function <span class="apidocSignatureSpan">gulp-util.</span>beep
+        <span class="apidocSignatureSpan">(val, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">beep = function (val, cb) {
+	if (!process.stdout.isTTY ||
+		process.argv.indexOf('--no-beep') !== -1 ||
+		process.argv.indexOf('--beep=false') !== -1) {
+		return;
+	}
+
+	cb = cb || function () {};
+
+	if (val === parseInt(val)) {
+		if (val &lt; 0) {
+			throw new TypeError('Negative numbers are not accepted');
+		}
+
+		if (val === 0) {
+			cb();
+			return;
+		}
+
+		for (var i = 0; i &lt; val; i++) {
+			setTimeout(function (i) {
+				beep();
+
+				if (i === val - 1) {
+					cb();
+				}
+			}, BEEP_DELAY * i, i);
+		}
+	} else if (!val) {
+		beep();
+		cb();
+	} else if (typeof val === 'string') {
+		melodicalBeep(val.split(''), cb);
+	} else {
+		throw new TypeError('Not an accepted type');
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.buffer" id="apidoc.element.gulp-util.buffer">
+        function <span class="apidocSignatureSpan">gulp-util.</span>buffer
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buffer = function (fn) {
+  var buf = [];
+  var end = function(cb) {
+    this.push(buf);
+    cb();
+    if(fn) fn(null, buf);
+  };
+  var push = function(data, enc, cb) {
+    buf.push(data);
+    cb();
+  };
+  return through.obj(push, end);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The stream will emit one data event after the stream piped to it has ended. The data will be the same array passed to the callback
+.
+
+Callback is optional and receives two arguments: error and data
+
+```javascript
+gulp.src('stuff/*.js')
+  .pipe(gutil.<span class="apidocCodeKeywordSpan">buffer</span>(function(err, files) {
+
+  }));
+```
+
+## new PluginError(pluginName, message[, options])
+
+- pluginName should be the module name of your plugin
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.combine" id="apidoc.element.gulp-util.combine">
+        function <span class="apidocSignatureSpan">gulp-util.</span>combine
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">combine = function (){
+  var args = arguments;
+  if (args.length === 1 &amp;&amp; Array.isArray(args[0])) {
+    args = args[0];
+  }
+  return function(){
+    return pipeline.apply(pipeline, args);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.date" id="apidoc.element.gulp-util.date">
+        function <span class="apidocSignatureSpan">gulp-util.</span>date
+        <span class="apidocSignatureSpan">(date, mask, utc, gmt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">date = function (date, mask, utc, gmt) {
+
+      // You can't provide utc if you skip other args (use the 'UTC:' mask prefix)
+      if (arguments.length === 1 &amp;&amp; kindOf(date) === 'string' &amp;&amp; !/\d/.test(date)) {
+        mask = date;
+        date = undefined;
+      }
+
+      date = date || new Date;
+
+      if(!(date instanceof Date)) {
+        date = new Date(date);
+      }
+
+      if (isNaN(date)) {
+        throw TypeError('Invalid date');
+      }
+
+      mask = String(dateFormat.masks[mask] || mask || dateFormat.masks['default']);
+
+      // Allow setting the utc/gmt argument via the mask
+      var maskSlice = mask.slice(0, 4);
+      if (maskSlice === 'UTC:' || maskSlice === 'GMT:') {
+        mask = mask.slice(4);
+        utc = true;
+        if (maskSlice === 'GMT:') {
+          gmt = true;
+        }
+      }
+
+      var _ = utc ? 'getUTC' : 'get';
+      var d = date[_ + 'Date']();
+      var D = date[_ + 'Day']();
+      var m = date[_ + 'Month']();
+      var y = date[_ + 'FullYear']();
+      var H = date[_ + 'Hours']();
+      var M = date[_ + 'Minutes']();
+      var s = date[_ + 'Seconds']();
+      var L = date[_ + 'Milliseconds']();
+      var o = utc ? 0 : date.getTimezoneOffset();
+      var W = getWeek(date);
+      var N = getDayOfWeek(date);
+      var flags = {
+        d:    d,
+        dd:   pad(d),
+        ddd:  dateFormat.i18n.dayNames[D],
+        dddd: dateFormat.i18n.dayNames[D + 7],
+        m:    m + 1,
+        mm:   pad(m + 1),
+        mmm:  dateFormat.i18n.monthNames[m],
+        mmmm: dateFormat.i18n.monthNames[m + 12],
+        yy:   String(y).slice(2),
+        yyyy: y,
+        h:    H % 12 || 12,
+        hh:   pad(H % 12 || 12),
+        H:    H,
+        HH:   pad(H),
+        M:    M,
+        MM:   pad(M),
+        s:    s,
+        ss:   pad(s),
+        l:    pad(L, 3),
+        L:    pad(Math.round(L / 10)),
+        t:    H &lt; 12 ? 'a'  : 'p',
+        tt:   H &lt; 12 ? 'am' : 'pm',
+        T:    H &lt; 12 ? 'A'  : 'P',
+        TT:   H &lt; 12 ? 'AM' : 'PM',
+        Z:    gmt ? 'GMT' : utc ? 'UTC' : (String(date).match(timezone) || ['']).pop().replace(timezoneClip, ''),
+        o:    (o &gt; 0 ? '-' : '+') + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4),
+        S:    ['th', 'st', 'nd', 'rd'][d % 10 &gt; 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
+        W:    W,
+        N:    N
+      };
+
+      return mask.replace(token, function (match) {
+        if (match in flags) {
+          return flags[match];
+        }
+        return match.slice(1, match.length - 1);
+      });
+    }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.isBuffer" id="apidoc.element.gulp-util.isBuffer">
+        function <span class="apidocSignatureSpan">gulp-util.</span>isBuffer
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isBuffer = function (o) {
+  return typeof o === 'object' &amp;&amp; o instanceof Buffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.isNull" id="apidoc.element.gulp-util.isNull">
+        function <span class="apidocSignatureSpan">gulp-util.</span>isNull
+        <span class="apidocSignatureSpan">(v)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNull = function (v) {
+  return v === null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.isStream" id="apidoc.element.gulp-util.isStream">
+        function <span class="apidocSignatureSpan">gulp-util.</span>isStream
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isStream = function (o) {
+  return !!o &amp;&amp; o instanceof Stream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.log" id="apidoc.element.gulp-util.log">
+        function <span class="apidocSignatureSpan">gulp-util.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function (){
+  if(hasGulplog()){
+    // specifically deferring loading here to keep from registering it globally
+    var gulplog = require('gulplog');
+    gulplog.info.apply(gulplog, arguments);
+  } else {
+    // specifically defering loading because it might not be used
+    var fancylog = require('fancy-log');
+    fancylog.apply(null, arguments);
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&lt;/table&gt;
+
+## Usage
+
+```javascript
+var gutil = require('gulp-util');
+
+gutil.<span class="apidocCodeKeywordSpan">log</span>('stuff happened', 'Really it did', gutil.colors.magenta
+('123'));
+
+gutil.replaceExtension('file.coffee', '.js'); // file.js
+
+var opt = {
+  name: 'todd',
+  file: someGulpFile
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.noop" id="apidoc.element.gulp-util.noop">
+        function <span class="apidocSignatureSpan">gulp-util.</span>noop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noop = function () {
+  return through.obj();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// gulp should be called like this :
+// $ gulp --type production
+gulp.task('scripts', function() {
+  gulp.src('src/**/*.js')
+    .pipe(concat('script.js'))
+    .pipe(gutil.env.type === 'production' ? uglify() : gutil.<span class="apidocCodeKeywordSpan">noop</span>())
+    .pipe(gulp.dest('dist/'));
+});
+```
+
+## buffer(cb)
+
+This is similar to es.wait but instead of buffering text into one string it buffers anything into an array (so very useful for file
+ objects).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.replaceExtension" id="apidoc.element.gulp-util.replaceExtension">
+        function <span class="apidocSignatureSpan">gulp-util.</span>replaceExtension
+        <span class="apidocSignatureSpan">(npath, ext)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">replaceExtension = function (npath, ext) {
+  if (typeof npath !== 'string') return npath;
+  if (npath.length === 0) return npath;
+
+  var nFileName = path.basename(npath, path.extname(npath))+ext;
+  return path.join(path.dirname(npath), nFileName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Usage
+
+```javascript
+var gutil = require('gulp-util');
+
+gutil.log('stuff happened', 'Really it did', gutil.colors.magenta('123'));
+
+gutil.<span class="apidocCodeKeywordSpan">replaceExtension</span>('file.coffee', '.js'); // file.js
+
+var opt = {
+  name: 'todd',
+  file: someGulpFile
+};
+gutil.template('test &lt;%= name %&gt; &lt;%= file.path %&gt;', opt) // test todd /js/hi.js
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.template" id="apidoc.element.gulp-util.template">
+        function <span class="apidocSignatureSpan">gulp-util.</span>template
+        <span class="apidocSignatureSpan">(tmpl, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">template = function (tmpl, data) {
+  var fn = template(tmpl, forcedSettings);
+
+  var wrapped = function(o) {
+    if (typeof o === 'undefined' || typeof o.file === 'undefined') {
+      throw new Error('Failed to provide the current file as "file" to the template');
+    }
+    return fn(o);
+  };
+
+  return (data ? wrapped(data) : wrapped);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+gutil.replaceExtension('file.coffee', '.js'); // file.js
+
+var opt = {
+  name: 'todd',
+  file: someGulpFile
+};
+gutil.<span class="apidocCodeKeywordSpan">template</span>('test &lt;%= name %&gt; &lt;%= file.path %&gt;', opt
+) // test todd /js/hi.js
+```
+
+### log(msg...)
+
+Logs stuff. Already prefixed with [gulp] and all that. If you pass in multiple arguments it will join them by a space.
+
+The default gulp coloring using gutil.colors.&lt;color&gt;:
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-util.File" id="apidoc.module.gulp-util.File">module gulp-util.File</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.File.File" id="apidoc.element.gulp-util.File.File">
+        function <span class="apidocSignatureSpan">gulp-util.</span>File
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function File(file) {
+  if (!file) file = {};
+
+  // record path change
+  var history = file.path ? [file.path] : file.history;
+  this.history = history || [];
+
+  this.cwd = file.cwd || process.cwd();
+  this.base = file.base || this.cwd;
+
+  // stat = files stats object
+  this.stat = file.stat || null;
+
+  // contents = stream, buffer, or null if not read
+  this.contents = file.contents || null;
+
+  this._isVinyl = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+This is a lodash.template function wrapper. You must pass in a valid gulp file object so it is available to the user or it will
+error. You can not configure any of the delimiters. Look at the [lodash docs](http://lodash.com/docs#template) for more info.
+
+## new File(obj)
+
+This is just [vinyl](https://github.com/wearefractal/vinyl)
+
+```javascript
+var file = new gutil.<span class="apidocCodeKeywordSpan">File</span>({
+  base: path.join(__dirname, './fixtures/'),
+  cwd: __dirname,
+  path: path.join(__dirname, './fixtures/test.coffee')
+});
+```
+
+## noop()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.File.isVinyl" id="apidoc.element.gulp-util.File.isVinyl">
+        function <span class="apidocSignatureSpan">gulp-util.File.</span>isVinyl
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isVinyl = function (file) {
+  return file &amp;&amp; file._isVinyl === true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-util.File.prototype" id="apidoc.module.gulp-util.File.prototype">module gulp-util.File.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.File.prototype.clone" id="apidoc.element.gulp-util.File.prototype.clone">
+        function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>clone
+        <span class="apidocSignatureSpan">(opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function (opt) {
+  if (typeof opt === 'boolean') {
+    opt = {
+      deep: opt,
+      contents: true
+    };
+  } else if (!opt) {
+    opt = {
+      deep: true,
+      contents: true
+    };
+  } else {
+    opt.deep = opt.deep === true;
+    opt.contents = opt.contents !== false;
+  }
+
+  // clone our file contents
+  var contents;
+  if (this.isStream()) {
+    contents = this.contents.pipe(new Stream.PassThrough());
+    this.contents = this.contents.pipe(new Stream.PassThrough());
+  } else if (this.isBuffer()) {
+    contents = opt.contents ? cloneBuffer(this.contents) : this.contents;
+  }
+
+  var file = new File({
+    cwd: this.cwd,
+    base: this.base,
+    stat: (this.stat ? cloneStats(this.stat) : null),
+    history: this.history.slice(),
+    contents: contents
+  });
+
+  // clone our custom properties
+  Object.keys(this).forEach(function(key) {
+    // ignore built-in fields
+    if (key === '_contents' || key === 'stat' ||
+      key === 'history' || key === 'path' ||
+      key === 'base' || key === 'cwd') {
+      return;
+    }
+    file[key] = opt.deep ? clone(this[key], true) : this[key];
+  }, this);
+  return file;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.File.prototype.inspect" id="apidoc.element.gulp-util.File.prototype.inspect">
+        function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>inspect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspect = function () {
+  var inspect = [];
+
+  // use relative path if possible
+  var filePath = (this.base &amp;&amp; this.path) ? this.relative : this.path;
+
+  if (filePath) {
+    inspect.push('"'+filePath+'"');
+  }
+
+  if (this.isBuffer()) {
+    inspect.push(this.contents.inspect());
+  }
+
+  if (this.isStream()) {
+    inspect.push(inspectStream(this.contents));
+  }
+
+  return '&lt;File '+inspect.join(' ')+'&gt;';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.File.prototype.isBuffer" id="apidoc.element.gulp-util.File.prototype.isBuffer">
+        function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>isBuffer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isBuffer = function () {
+  return isBuffer(this.contents);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.File.prototype.isDirectory" id="apidoc.element.gulp-util.File.prototype.isDirectory">
+        function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>isDirectory
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isDirectory = function () {
+  return this.isNull() &amp;&amp; this.stat &amp;&amp; this.stat.isDirectory();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.File.prototype.isNull" id="apidoc.element.gulp-util.File.prototype.isNull">
+        function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>isNull
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNull = function () {
+  return isNull(this.contents);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.File.prototype.isStream" id="apidoc.element.gulp-util.File.prototype.isStream">
+        function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>isStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isStream = function () {
+  return isStream(this.contents);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.File.prototype.pipe" id="apidoc.element.gulp-util.File.prototype.pipe">
+        function <span class="apidocSignatureSpan">gulp-util.File.prototype.</span>pipe
+        <span class="apidocSignatureSpan">(stream, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pipe = function (stream, opt) {
+  if (!opt) opt = {};
+  if (typeof opt.end === 'undefined') opt.end = true;
+
+  if (this.isStream()) {
+    return this.contents.pipe(stream, opt);
+  }
+  if (this.isBuffer()) {
+    if (opt.end) {
+      stream.end(this.contents);
+    } else {
+      stream.write(this.contents);
+    }
+    return stream;
+  }
+
+  // isNull
+  if (opt.end) stream.end();
+  return stream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns a stream that does nothing but pass data straight through.
+
+```javascript
+// gulp should be called like this :
+// $ gulp --type production
+gulp.task('scripts', function() {
+  gulp.src('src/**/*.js')
+    .<span class="apidocCodeKeywordSpan">pipe</span>(concat('script.js'))
+    .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
+    .pipe(gulp.dest('dist/'));
+});
+```
+
+## buffer(cb)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-util.PluginError" id="apidoc.module.gulp-util.PluginError">module gulp-util.PluginError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.PluginError.PluginError" id="apidoc.element.gulp-util.PluginError.PluginError">
+        function <span class="apidocSignatureSpan">gulp-util.</span>PluginError
+        <span class="apidocSignatureSpan">(plugin, message, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PluginError(plugin, message, opt) {
+  if (!(this instanceof PluginError)) throw new Error('Call PluginError using new');
+
+  Error.call(this);
+
+  var options = parseOptions(plugin, message, opt);
+  var self = this;
+
+  // if options has an error, grab details from it
+  if (options.error) {
+    // These properties are not enumerable, so we have to add them explicitly.
+    arrayUniq(Object.keys(options.error).concat(nonEnumberableProperties))
+      .forEach(function(prop) {
+        self[prop] = options.error[prop];
+      });
+  }
+
+  var properties = ['name', 'message', 'fileName', 'lineNumber', 'stack', 'showStack', 'showProperties', 'plugin'];
+
+  // options object can override
+  properties.forEach(function(prop) {
+    if (prop in options) this[prop] = options[prop];
+  }, this);
+
+  // defaults
+  if (!this.name) this.name = 'Error';
+
+  if (!this.stack) {
+    // Error.captureStackTrace appends a stack property which relies on the toString method of the object it is applied to.
+    // Since we are using our own toString method which controls when to display the stack trace if we don't go through this
+    // safety object, then we'll get stack overflow problems.
+    var safety = {
+      toString: function() {
+        return this._messageWithDetails() + '\nStack:';
+      }.bind(this)
+    };
+    Error.captureStackTrace(safety, arguments.callee || this.constructor);
+    this.__safety = safety;
+  }
+
+  if (!this.plugin) throw new Error('Missing plugin name');
+  if (!this.message) throw new Error('Missing error message');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- If you pass an error in as the message the stack will be pulled from that, otherwise one will be created.
+- Note that if you pass in a custom stack string you need to include the message along with that.
+- Error properties will be included in `err.toString()`. Can be omitted by including `{showProperties: false}` in the options.
+
+These are all acceptable forms of instantiation:
+
+```javascript
+var err = new gutil.<span class="apidocCodeKeywordSpan">PluginError</span>('test', {
+  message: 'something broke'
+});
+
+var err = new gutil.PluginError({
+  plugin: 'test',
+  message: 'something broke'
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.PluginError.super_" id="apidoc.element.gulp-util.PluginError.super_">
+        function <span class="apidocSignatureSpan">gulp-util.PluginError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-util.PluginError.prototype" id="apidoc.module.gulp-util.PluginError.prototype">module gulp-util.PluginError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.PluginError.prototype._messageDetails" id="apidoc.element.gulp-util.PluginError.prototype._messageDetails">
+        function <span class="apidocSignatureSpan">gulp-util.PluginError.prototype.</span>_messageDetails
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_messageDetails = function () {
+  if (!this.showProperties) {
+    return '';
+  }
+
+  var properties = arrayDiffer(Object.keys(this), propertiesNotToDisplay);
+
+  if (properties.length === 0) {
+    return '';
+  }
+
+  var self = this;
+  properties = properties.map(function stringifyProperty(prop) {
+    return '    ' + prop + ': ' + self[prop];
+  });
+
+  return 'Details:\n' + properties.join('\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.PluginError.prototype._messageWithDetails" id="apidoc.element.gulp-util.PluginError.prototype._messageWithDetails">
+        function <span class="apidocSignatureSpan">gulp-util.PluginError.prototype.</span>_messageWithDetails
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_messageWithDetails = function () {
+  var messageWithDetails = 'Message:\n    ' + this.message;
+  var details = this._messageDetails();
+
+  if (details !== '') {
+    messageWithDetails += '\n' + details;
+  }
+
+  return messageWithDetails;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.PluginError.prototype.toString" id="apidoc.element.gulp-util.PluginError.prototype.toString">
+        function <span class="apidocSignatureSpan">gulp-util.PluginError.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  var sig = chalk.red(this.name) + ' in plugin \'' + chalk.cyan(this.plugin) + '\'';
+  var detailsWithStack = function(stack) {
+    return this._messageWithDetails() + '\nStack:\n' + stack;
+  }.bind(this);
+
+  var msg;
+  if (this.showStack) {
+    if (this.__safety) { // There is no wrapped error, use the stack captured in the PluginError ctor
+      msg = this.__safety.stack;
+    } else if (this._stack) {
+      msg = detailsWithStack(this._stack);
+    } else { // Stack from wrapped error
+      msg = detailsWithStack(this.stack);
+    }
+  } else {
+    msg = this._messageWithDetails();
+  }
+
+  return sig + '\n' + msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## new PluginError(pluginName, message[, options])
+
+- pluginName should be the module name of your plugin
+- message can be a string or an existing error
+- By default the stack will not be shown. Set `options.showStack` to true if you think the stack is important for your error.
+- If you pass an error in as the message the stack will be pulled from that, otherwise one will be created.
+- Note that if you pass in a custom stack string you need to include the message along with that.
+- Error properties will be included in `err.<span class="apidocCodeKeywordSpan">toString</span>()`. Can be omitted by including `{
+showProperties: false}` in the options.
+
+These are all acceptable forms of instantiation:
+
+```javascript
+var err = new gutil.PluginError('test', {
+  message: 'something broke'
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-util.colors" id="apidoc.module.gulp-util.colors">module gulp-util.colors</a></h1>
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.colors.hasColor" id="apidoc.element.gulp-util.colors.hasColor">
+        function <span class="apidocSignatureSpan">gulp-util.colors.</span>hasColor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasColor = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-util.colors.stripColor" id="apidoc.element.gulp-util.colors.stripColor">
+        function <span class="apidocSignatureSpan">gulp-util.colors.</span>stripColor
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stripColor = function (str) {
+	return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
